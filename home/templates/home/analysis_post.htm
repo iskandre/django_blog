@@ -1,0 +1,361 @@
+
+{% extends "blog_single_generic.htm" %}
+
+{% block content %}
+
+<!--About Tab-->
+<section id="about" class="bgWhite ofsInBottom active" style="display: block;">
+                    						
+<!--About -->
+<div class="about">
+
+
+							<!--Main title-->
+							
+								<div class="main-title">
+									<h1>who am i</h1>
+									<div class="divider">
+											<div class="zigzag large clearfix " data-svg-drawing="yes">
+<svg xml:space="preserve" viewBox="0 0 69.172 14.975" width="37" height="28" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1">
+<path d="M1.357,12.26 10.807,2.81 20.328,12.332
+	29.781,2.879 39.223,12.321 48.754,2.79 58.286,12.321 67.815,2.793 " style="stroke-dasharray: 93.9851, 93.9851; stroke-dashoffset: 0;"></path>
+</svg>
+</div>
+									</div>
+								</div>	
+								
+							<!--End main title-->
+						
+						
+							
+						
+						<!--Content-->	
+						<div class="content">
+<div class = "intro_post_div">
+<p>If you go to the following link <a>http://www.iskandre.com:8001/tool/statistics/</a>
+you will be able to see the result of the robot activities on several categories:
+<ul style = "margin-left: 40px; padding-left: 0px; list-style-type: circle;">
+<li><h6>Basic analysis</h6> it shows how many people followed back from the audience and which blogger
+this audience belongs to. It also shows the percentage of these people from all users the robot followed.</li>
+<li><h6>Clustering analysis</h6> shows which hashtags are used by users whom the robot follows. 
+And which hashtags are used by users who are more likely to follow back</li>
+<li><h6>Geographical analysis</h6> It shows the distribution of users based on countries 
+and how following back rate varies from country to country.</li>
+<li><h6>Analysis</h6> It represents heatmaps and pairplots of the different statistical factors 
+based on the analysis of the audience that the robot follows.</li>
+<li><h6>Advanced analysis</h6> It demonstrates the results of Bayesian simulation to show 
+which factors affect more the following back rate</li>
+</ul>
+</p>
+</div>
+</br></br>
+<h3>Basic analysis</h3>
+<p>The conception here is that the robot scans the active audience of the bloggers which are set 
+in the tool interface. This table helps to understand the audience of which bloggers
+follows back much better. This is called followingCTR parameter. 
+In other words it shows (the number of people following back)/(total number of followed people) for 
+every blogger. Then it helps to adjust the revelant audience using the 'related accounts' feature in Instagram.
+</br>The example above is given for one of the accounts the robot used for promotion. The account has a photography theme.
+</p>
+
+{% if results_table%}
+<table id="example" class="display dataTable" cellspacing="0" width="100%" role = "grid" aria-describedby = "example_info">
+        <thead>
+            <tr>
+                <th>Blogger</th>
+                <th>Total people followed by robot</th>
+                <th>Number of people following back</th>
+                <th>Number of likers</th>
+                <th>Unfollowers</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>Blogger</th>
+                <th>Total people followed by robot</th>
+                <th>Number of people following back</th>
+                <th>Number of likers</th>
+                <th>Unfollowers later</th>
+            </tr>
+        </tfoot>
+        <tbody>
+        {% for key,value in results_table.items %}
+            <tr>
+                <td>{{key}}</td>
+                <td>{{ value|get_item:"records" }}</td>
+                <td>{{ value|get_item:"follow" }}</td>
+                <td>{{ value|get_item:"like" }}</td>
+                <td>{{ value|get_item:"unfollow" }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% else %}
+    No entries
+    <div></br></div>
+{% endif %}
+<p>For example we can see the the robot followed 10 people from the active audience of the blogger and 10 people followed back and 5 unfollowed later on</p>
+
+</br></br>
+<h3>Geographical analysis</h3>
+<p>Geographical map for the following back rate (in %) is given for the account iskandre (*I used my account in this case as it's more international orientated)</p>
+    <span>This map shows the following back rate (in %) in different countries</span>
+                 {% autoescape off %}
+{{followerCTR_map}}
+                             {% endautoescape %}
+<p>So we can see that users from Chile or Argentina are more likely to follow back rather than users from Russia. 
+Knowing this information one can adjust the list of bloggers for scanning the audience and choose the bloggers from any particular country</p>
+<p>We can also see, for example, 23% of people from Argentina whom the robot follows, follow me back, 24% in Chile and only 5% in Russia</p>
+<span>This map below shows the total number of people who followed back. As it's seen the majority of people come from South America, Spain and France.</span>
+                 {% autoescape off %}
+{{sum_followers_map}}
+                {% endautoescape %}
+<p>This statistics helps to understand the region it's better to focus on.</br>
+For example, in my case this information helped me to shift the focus from European countries like the UK or Germany to Chile and Argentina and
+this boosted the number followers.</p>   
+    
+    <h3>Hashtags Clustering</h3>
+<p>The data about users whom the robot follows are collected and proccessed. 
+This helps to build clustering analysis on the hashtags the audience uses.
+</br>Based on this information, we can group people into different categories regarding the types 
+of hashtags they use and see users from which category are more
+likely to follow back. Also it gives the insights which sorts of hashtags affect following back rate 
+in a positive or negative way.
+</br>
+In this case we created 7 main clusters where we separated the audience for the photographer's account. 
+The result is presented below. </br>Sometimes the separation is not perfect of course, but
+still we can see that it exists.
+</br>Every circle colour means one particular cluster and we have top 5 words for every cluster. 
+The bigger the circle is the bigger is the share that the word has.
+</br>In this case we can see that two biggest audience groups use nature related and fashion hashtags. 
+While the share of sport group is much less.
+</p>
+
+<div class="clusters-circles">
+
+<script>
+var json = {
+ "name": "data",
+ "children": [
+  {
+     "name": "topics",
+     "children": [
+             {% autoescape off %}
+                {{ clusters_string }}
+            {% endautoescape %}
+]
+    }
+   ]
+};
+
+var r = 700,
+    format = d3.format(",d"),
+    fill = d3.scale.category20c();
+
+var bubble = d3.layout.pack()
+    .sort(null)
+    .size([r, r])
+    .padding(1.5);
+
+var vis = d3.select(".clusters-circles").append("svg")
+    .attr("width", r)
+    .attr("height", r)
+    .attr("class", "bubble");
+
+
+var node = vis.selectAll("g.node")
+    .data(bubble.nodes(classes(json))
+    .filter(function(d) { return !d.children; }))
+    .enter().append("g")
+    .attr("class", "node")
+    .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
+    color = d3.scale.category20();
+  
+  node.append("title")
+      .text(function(d) { return d.className + ": " + format(d.value); });
+  
+  node.append("circle")
+      .attr("r", function(d) { return d.r; })
+      .style("fill", function(d) {return color(d.topicName);});
+
+var text = node.append("text")
+    .attr("text-anchor", "middle")
+    .attr("dy", ".2em")
+    .text(function(d) { return d.className.substring(0, d.r / 3)});
+  
+  text.append("tspan")
+      .attr("dy", "1.0em")
+      .attr("x", 0)
+      .text(function(d) {return Math.ceil(d.value * 10000) /10000; });
+
+// Returns a flattened hierarchy containing all leaf nodes under the root.
+function classes(root) {
+  var classes = [];
+  
+  function recurse(term, node) {
+    if (node.children) node.children.forEach(function(child) { recurse(node.term, child); });
+    else classes.push({topicName: node.topicId, className: node.term, value: node.probability});
+  }
+  
+  recurse(null, root);
+  return {children: classes};
+}
+</script>
+
+
+</div>
+<p>
+For example, in this case we see that the audience from Saint Petersburg is less likely to follow back 
+(only 1,8% of users who follow back).
+</br>People with love related hashtags don't have very high following back rate either.
+</br>Such conclusions help to either adjust the robot settings to target people excluding 
+the particular groups of hashtags or adjust the instagram account content.
+</p>
+
+<table id="example" class="display dataTable" cellspacing="0" width="100%" role = "grid" aria-describedby = "example_info">
+        <thead>
+            <tr>
+                <th>Cluster</th>
+                <th>Top 5 words</th>
+                <th>Followers</th>
+                <th>Non followers</th>
+                <th>Following CTR, %</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>Cluster</th>
+                <th>Top 5 words</th>
+                <th>Followers</th>
+                <th>Non followers</th>
+                <th>Following CTR, %</th>
+            </tr>
+        </tfoot>
+        <tbody>
+        {% for key,value in clusters_table.items %}
+            <tr>
+                <td>{{key}}</td>
+                <td>{{ value|get_item:"top_words" }}</td>
+                <td>{{ value|get_item:"followers" }}</td>
+                <td>{{ value|get_item:"nonFollowers" }}</td>
+                <td>{{ value|get_item:"followingCTR" }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+    </br></br>
+    <h3>Advanced analysis</h3>
+    Here is how the data about every use looks like after the data collection and proccessing.
+    <img src="{{df_userMapScreen}}" width="100%" height="100%">
+    Briefly, the following information about every user is available for analysis:
+    <ul style = "margin-left: 40px; padding-left: 0px; list-style-type: circle;">
+    <li>username</li>
+    <li>root_user: in the audience of which blogger this user was found</li>
+    <li>followed_by: by how many people this user is followed</li>
+    <li>follows: how many people this user follows</li>
+    <li>posts_count: how many posts this user has</li>
+    <li>homeCountry: potential home country of the user (based on the geo tags frequency)</li>
+    <li>avgLikesPerPost: average amount of likes per post</li>
+    <li>avgPostingFreq: average posting frequency</li>
+    <li>follower: if user followed back or not, boolean: 1 - yes, 0 - no</li>
+    <li>liker: if user liked any of the pictures, boolean: 1 - yes, 0 - no</li>
+    <li>countriesCount: how many countries the user visited according to the geo tags</li>
+    <li>bioLen: the length of profile description</li>
+    <li>bioContacts: if the user has any contact information in the profile description</li>
+    <li>bioFlag: if user used any geo flag in the profile description, helps to confirm is the home country is correct</li>
+    <li>hashtagsRatio: the average amount of hashtags per post</li>
+    
+    Then a statistical model is build for determing if this users is more likely to follow back or not. </br>
+    Thus we can understand which factors affect more on this output and adjust the 
+    robot's strategy based on the simulation results.
+    
+    <br>Briefly, the Bayesian statistics is applied here to build a hierarhical model with random effects. 
+    In our case we have two factors as random effects:
+    <ul>
+    <li>the country of the user</li>
+    <li>the blogger's audience this user comes from<li>
+    </ul></br>
+    For more techincal information how the random effects model works and why these factors were choose, feel free to ask me.</br>
+    In few words, such model structure is choosen as users within each country have specific behaviour patterns
+    and every top blogger the robot scans has his own specific audience with their own behavioural characteristics.
+    </br></br>
+    Below the snapshot of the model is presented. R and BUGS for Bayesian simulations (though data processing is done in Python, however I find R BUGS much better for bayesian simulations).
+    </br>
+    <img src="{{bugsModelScreen}}" width="70%" height="70%">
+    </br>Now I will show the simulation output for each factor in the model. The general interpretation: if the mean value is above 0, then this factor positevely affects 
+    the probability of following back and versus if below 0 then it's a negative effect.
+    
+    <h6><a name="b1">Follows coefficient:</a></h6>
+    <p>One can see that it has the positive coefficient and the autocorrelation function is fading down, 
+    it means that more people the person follows, more likely the person will follow you back.</p>
+    <img class="mcmcplot" src="{{b1}}" width="640" height="480" /> 
+    <h6><a name="b2">Followed_by coefficient</a></h6>
+    <p>This coefficient has a negative value, in other words, the more followers the person has, 
+    less likely the person follow you back. This is also quite logical, as you following
+    will be less noticable among other people who follow this person.</p>
+    <img class="mcmcplot" src="{{b2}}" width="640" height="480" /> 
+    <h6><a name="b3">posts_count coefficient</a></h6>
+    <p>This coefficient also negatively affect the probabolity of following back. In other words the more, less posts a user has, better for us.</p>
+    <img class="mcmcplot" src="{{b3}}" width="640" height="480" /> 
+    <h6><a name="b4">avgLikesPerPost coefficient</a></h6>
+    <p>This factor also negatively affects the probability of following back. So less likes per post a user has, better for the probability to follow back.</p>
+    <img class="mcmcplot" src="{{b4}}" width="640" height="480" /> 
+    <h6><a name="b5">avgPostingFreq coefficient</a></h6>
+    <p>The coefficient has a negative value, in other words, less often the user posts, more likely he will follow us back.</p>
+    <img class="mcmcplot" src="{{b5}}" width="640" height="480" /> 
+    <h6><a name="b6">countriesCount coefficient</a></h6>
+    <p>This coefficient is also negative. It says to us that users who visit less countries are more likely to follow us back.</p>
+    <img class="mcmcplot" src="{{b6}}" width="640" height="480" /> 
+    <h6><a name="b7">hashtagsRatio coefficient</a></h6>
+    <p>This facor has quite a big negative value, it says that users who use less hashtags are more likely to follow us back.</p>
+    <img class="mcmcplot" src="{{b7}}" width="640" height="480" /> 
+    <h6><a name="b8">bioFlag_indicator coefficient</a></h6>
+    <p>Having this coefficient positive means that having a country flag in a profile description positively affects the probability to follow back</p>
+    <img class="mcmcplot" src="{{b8}}" width="640" height="480" />   
+    
+    
+    </br></br>
+    
+    <h3>Basic analysis: heatmaps and pairplots</h3>
+    </br>
+    <h6>Pairplot followed-follows with geo split</h6>
+    <p>The graph below shows the pairplot between two factors: how many followers and how many following. 
+    For example, it gives us understand that French as not as active users as south americans. According to the top right graph it gives us logical
+    conclusion that there are accounts which don't follow many people however they are followed by many, however if the account follows a lot of people,
+    it's cerntainly to be followed by many too.</p>
+    </br> Regarding the distribution in the regions, in this case we don't observe too much of difference.
+    <img src="{{pairplot_withGeo}}" width="70%" height="70%">
+
+
+    <h4>Factors correlation heatmap</h4></br>
+    <p>This graph shows us the correlation between factors. In this case we can see three pairs which are very correlated or anti-correlated.
+    </br>Follows - Followed by 0.36 correlation what totally makes sense: the more you follow, by more you're followed.
+    </br>Followed by - average likes per post 0.3 what also makes sense.
+    </br>Post counts - average posting frequency which also makes sense.
+    </br> Running later the PCA analysis we can thus exclude highly correlated factors from the model, in our case it's average likes per post and average posting frequency</p>
+    <img src="{{correlation_heatmap_graph}}" width="70%" height="70%">
+    </br></br>
+
+<div>The rest three graphs just show the distribution for three factors with separation between followers and non-followers groups</div>
+    
+    <span>The graphs below help to understand the distribution based on two groups of people: followers and non-followers</span></br></br>
+    <h4>How many people a person is followed by distribution</h4></br>
+    <img src="{{pairplot_followed_by}}" width="70%" height="70%">
+    </br></br>
+        <h4>How many people a person follows distribution</h4></br>
+    <img src="{{pairplot_follows}}" width="70%" height="70%">
+    </br></br>
+    
+        <h4>Posts count distribution</h4></br>
+    <img src="{{pairplot_posts_count}}" width="70%" height="70%">
+    </br></br>
+    
+    
+</div>
+</div>
+</div>    
+
+{% endblock %}

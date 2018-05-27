@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+    
+            <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+        <title>Forms sample - Viewflow Demo</title>
+        
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+
+<script type="text/javascript">
+  $(document).on('turbolinks:load', function () {
+    $('.dropdown-button').dropdown()
+  })
+</script>
+
+<script type="text/javascript">
+  $(document).on('turbolinks:load', function() {
+    $('pre code').each(function(i, block) {
+      hljs.highlightBlock(block);
+    });
+    $('.modal').modal();
+  })
+</script>
+
+
+{% load static %} 
+<script src="{% static 'material/js/jquery.js' %}"></script>
+{% include 'material/includes/material_css.html' %}
+{% include 'material/includes/material_js.html' %}
+
+    <link rel="stylesheet" type="text/css" href="https://datatables.net/media/css/site-examples.css?_=6e5593ad4c5375eef5d919cfc10a0a54">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+    <style type="text/css" class="init">
+    
+    tfoot input {
+	width: 100%;
+	padding: 3px;
+	box-sizing: border-box;
+    }
+    </style>
+    
+    <style>
+
+    circle {
+      fill: rgb(31, 119, 180);
+      fill-opacity: 0.5;
+      stroke: rgb(31, 119, 180);
+      stroke-width: 1px;
+    }
+    
+    .leaf circle {
+      fill: #ff7f0e;
+      fill-opacity: 1;
+    }
+    
+    </style>
+
+    <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-1.12.4.js">
+    </script>
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js">
+    </script>
+    <script type="text/javascript" language="javascript" src="https://datatables.net/examples/resources/demo.js">
+    </script>
+    <script type="text/javascript" class="init">
+    
+
+$(document).ready(function() {
+    // Setup - add a text input to each footer cell
+    $('#example tfoot th').each( function () {
+	var title = $(this).text();
+	$(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    } );
+
+    // DataTable
+    var table = $('#example').DataTable();
+
+    // Apply the search
+    table.columns().every( function () {
+	var that = this;
+
+	$( 'input', this.footer() ).on( 'keyup change', function () {
+	    if ( that.search() !== this.value ) {
+		that
+		    .search( this.value )
+		    .draw();
+	    }
+	} );
+    } );
+} );
+
+
+    </script>
+<link rel="stylesheet" id="contact-form-7-css" href="/static/allegiant_files/styles.css" type="text/css" media="all">
+<link rel="stylesheet" id="fontawesome-css" href="/static/allegiant_files/fontawesome.css" type="text/css" media="all">
+<link rel="stylesheet" id="cpo-companion-style-css" href="/static/allegiant_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="ctdw-styles-css" href="/static/allegiant_files/style(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="ctwg-shortcodes-css" href="/static/allegiant_files/style(2).css" type="text/css" media="all">
+<link rel="stylesheet" id="woocommerce-layout-css" href="/static/allegiant_files/woocommerce-layout.css" type="text/css" media="all">
+<link rel="stylesheet" id="woocommerce-smallscreen-css" href="/static/allegiant_files/woocommerce-smallscreen.css" type="text/css" media="only screen and (max-width: 768px)">
+<link rel="stylesheet" id="woocommerce-general-css" href="/static/allegiant_files/woocommerce.css" type="text/css" media="all">
+<link rel="stylesheet" id="cpotheme-base-css" href="/static/allegiant_files/base.css" type="text/css" media="all">
+<link rel="stylesheet" id="cpotheme-main-css" href="/static/allegiant_files/style(3).css" type="text/css" media="all">
+<script type="text/javascript" src="/static/allegiant_files/jquery.js"></script>
+<script type="text/javascript" src="/static/allegiant_files/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="/static/allegiant_files/html5-min.js"></script>
+<link rel="https://api.w.org/" href="http://demos.cpothemes.com/allegiant/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://demos.cpothemes.com/allegiant/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://demos.cpothemes.com/allegiant/wp-includes/wlwmanifest.xml"> 
+<link rel="canonical" href="http://demos.cpothemes.com/allegiant/page-templates/wide-page/">
+<link rel="shortlink" href="http://demos.cpothemes.com/allegiant/?p=1816">
+<link rel="alternate" type="application/json+oembed" href="http://demos.cpothemes.com/allegiant/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fdemos.cpothemes.com%2Fallegiant%2Fpage-templates%2Fwide-page%2F">
+<link rel="alternate" type="text/xml+oembed" href="http://demos.cpothemes.com/allegiant/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fdemos.cpothemes.com%2Fallegiant%2Fpage-templates%2Fwide-page%2F&amp;format=xml">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<link rel="pingback" href="http://demos.cpothemes.com/allegiant/xmlrpc.php">
+
+	<noscript>&lt;style&gt;.woocommerce-product-gallery{ opacity: 1 !important; }&lt;/style&gt;</noscript>
+	<style type="text/css" id="custom-background-css">
+body.custom-background { background-image: url("https://mk0cpothemesdemokfq4.kinstacdn.com/wp-content/uploads/sites/32/2015/06/background-forest.jpg"); background-position: center top; background-size: auto; background-repeat: no-repeat; background-attachment: fixed; }
+</style>
+	<style type="text/css">
+		body {
+						font-size:1em; 
+						
+						font-family:'Source Sans Pro'; 
+			font-weight:400; 
+						
+						color:#9999aa; 
+					}
+		
+		
+				.button, .button:link, .button:visited, 
+		input[type=submit],
+		.tp-caption { 		
+			font-family:'Source Sans Pro';
+			font-weight:400; 
+		}
+				
+		
+		h1, h2, h3, h4, h5, h6, .heading, .header .title { 		
+						font-family:'Source Sans Pro'; 
+			font-weight:400; 
+						color:#556677;		}
+		
+		
+		.widget-title { 		
+			color:#556677;		}
+		
+		
+		.menu-main li a { 		
+						font-family:'Source Sans Pro'; 
+			font-weight:400; 
+						color:#9999aa;		}
+		
+		.menu-mobile li a { 		
+						font-family:'Source Sans Pro'; 
+			font-weight:400; 
+									color:#9999aa; 
+					}
+		
+		
+				a:link, a:visited { color:#2a88bf; }
+		a:hover { color:#2a88bf; }
+		
+		
+				.primary-color { color:#89ce40; }
+		.primary-color-bg { background-color:#89ce40; }
+		.primary-color-border { border-color:#89ce40; }
+		.menu-item.menu-highlight > a { background-color:#89ce40; }
+		.tp-caption.primary_color_background { background:#89ce40; }
+		.tp-caption.primary_color_text{ color:#89ce40; }
+		.widget_nav_menu a .menu-icon { color:#89ce40; }
+		
+		.button, .button:link, .button:visited, input[type=submit] { background-color:#89ce40; }
+		.button:hover, input[type=submit]:hover { background-color:#89ce40; }
+		::selection  { color:#fff; background-color:#89ce40; }
+		::-moz-selection { color:#fff; background-color:#89ce40; }
+		
+				
+				.secondary-color { color:#444449; }
+		.secondary-color-bg { background-color:#444449; }
+		.secondary-color-border { border-color:#444449; }
+		.tp-caption.secondary_color_background { background:#444449; }
+		.tp-caption.secondary_color_text{ color:#444449; }		
+			
+
+
+				.slider-slides { height:650px; }
+			</style>
+	<style type="text/css">
+				html body .button, 
+		html body .button:link, 
+		html body .button:visited, 
+		html body input[type=submit] { background:none; border-color:#89ce40; color:#89ce40; }
+		html body .button:hover, 
+		html body input[type=submit]:hover { color:#fff; background:#89ce40; }
+		.menu-main .current_page_ancestor > a,
+		.menu-main .current-menu-item > a { color:#89ce40; }
+		.menu-portfolio .current-cat a,
+		.pagination .current { background-color:#89ce40; }
+		.features a.feature-image { color:#89ce40; }
+		    </style>
+
+    </head>
+    
+<body class="page-template-default page page-id-1816 page-child parent-pageid-1670 custom-background  
+sidebar-none header-normal title-normal footer-normal">
+    
+	<div class="outer" id="top">
+				<div class="wrapper">
+
+			<header id="header" class="header">
+				<div class="container">
+<div id="menu-mobile-open" class=" menu-mobile-open menu-mobile-toggle"></div>
+					<ul id="menu-main" class="menu-main">
+					<li id="menu-item-1930" class="menu-item menu-item-type-post_type menu-item-object-page 
+					menu-item-has-children menu-item-1930"><a href="http://demos.cpothemes.com/allegiant/features/">Features</a>
+<ul class="sub-menu">
+	<li id="menu-item-1936" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1936"><a href="http://demos.cpothemes.com/allegiant/features/custom-shortcodes/">Custom Shortcodes</a></li>
+	<li id="menu-item-1939" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1939"><a href="http://demos.cpothemes.com/allegiant/features/customizable-typography/">Customizable Typography</a></li>
+	<li id="menu-item-1937" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1937"><a href="http://demos.cpothemes.com/allegiant/features/demo-content/">Included Demo Content</a></li>
+	<li id="menu-item-1933" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1933"><a href="http://demos.cpothemes.com/allegiant/features/multi-language-integration/">Multi-Language Integration</a></li>
+	<li id="menu-item-1940" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1940"><a href="http://demos.cpothemes.com/allegiant/features/powerful-theme-options/">Powerful Theme Options</a></li>
+	<li id="menu-item-1935" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1935"><a href="http://demos.cpothemes.com/allegiant/features/premium-support/">Premium Support</a></li>
+	<li id="menu-item-1938" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1938"><a href="http://demos.cpothemes.com/allegiant/features/responsive-design/">Responsive Design</a></li>
+	<li id="menu-item-1934" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1934"><a href="http://demos.cpothemes.com/allegiant/features/unlimited-color-palette/">Unlimited Color Palette</a></li>
+</ul>
+</li>
+<li id="menu-item-1920" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-menu-ancestor current-menu-parent current-page-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1920"><a href="http://demos.cpothemes.com/allegiant/page-templates/">Page Templates</a>
+<ul class="sub-menu">
+	<li id="menu-item-1932" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-1816 current_page_item menu-item-1932"><a href="http://demos.cpothemes.com/allegiant/page-templates/wide-page/">Wide Page</a></li>
+	<li id="menu-item-2004" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2004"><a href="http://demos.cpothemes.com/allegiant/page-templates/left-sidebar/">Left Sidebar</a></li>
+	<li id="menu-item-1987" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1987"><a href="http://demos.cpothemes.com/allegiant/page-templates/two-sidebars/">Double Sidebar</a></li>
+	<li id="menu-item-1988" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1988"><a href="http://demos.cpothemes.com/allegiant/page-templates/minimal-page/">Minimal Page</a></li>
+	<li id="menu-item-1931" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1931"><a href="http://demos.cpothemes.com/allegiant/page-templates/blank-page/">Blank Page</a></li>
+	<li id="menu-item-2005" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2005"><a href="http://demos.cpothemes.com/allegiant/page-templates/page-with-comments/">Page With Comments</a></li>
+	<li id="menu-item-1929" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1929"><a href="http://demos.cpothemes.com/allegiant/page-templates/submenu-pages/">Submenu Navigation</a></li>
+	<li id="menu-item-1921" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1921"><a href="http://demos.cpothemes.com/allegiant/page-templates/sitemap/">Sitemap</a></li>
+</ul>
+</li>
+<li id="menu-item-1928" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1928"><a href="http://demos.cpothemes.com/allegiant/shortcodes/">Shortcodes</a></li>
+<li id="menu-item-1927" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1927"><a href="http://demos.cpothemes.com/allegiant/portfolio/">Portfolio</a></li>
+<li id="menu-item-1926" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1926"><a href="http://demos.cpothemes.com/allegiant/blog/">Blog</a></li>
+<li id="menu-item-1993" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1993"><a href="http://demos.cpothemes.com/allegiant/contact/">Contact</a></li>
+</ul>					<div class="clear"></div>
+				</div>
+			</header>
+			
+			
+
+<section id="pagetitle" class="pagetitle dark">
+	<div class="container">
+		<h1 class="pagetitle-title heading">Wide Page</h1><div id="breadcrumb" class="breadcrumb"><a class="breadcrumb-link" href="http://demos.cpothemes.com/allegiant">Home</a><span class="breadcrumb-separator"></span><a class="breadcrumb-link" href="http://demos.cpothemes.com/allegiant/page-templates/">Page Templates</a>
+<span class="breadcrumb-separator"></span><span class="breadcrumb-title">Wide Page</span>
+</div>	</div>
+</section>
+
+			
+						<div class="clear"></div>
+<div id="main" class="main">
+	<div class="container">
+		<section id="content" class="content">
+									<div id="post-1816" class="post-1816 page type-page status-publish hentry">
+				<div class="page-content">
+
+    
+    
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> 
+    <h2>Follower CTR Map</h2>
+    <span>This map shows the following back CTR in different countries</span>
+                 {% autoescape off %}
+{{followerCTR_map}}
+                             {% endautoescape %}
+    </br></br>
+    <h2>Like CTR Map</h2>
+    <span>This map shows the like conversion in different countries</span>
+                 {% autoescape off %}
+    {{likerCTR_map}}
+                                 {% endautoescape %}
+    </br></br>
+    <h2>Total followers back map</h2>
+    <span>This map shows the number of people following back in different countries</span>
+                 {% autoescape off %}
+    {{sum_followers_map}}
+                                 {% endautoescape %}
+    </br></br>
+    
+    
+
+</div>
+			</div>
+											</section>
+				<div class="clear"></div>
+	</div>
+</div>
+		
+						<footer id="footer" class="footer secondary-color-bg dark">
+				<div class="container">
+					<div id="footermenu" class="footermenu"><div class="menu-footer-container"><ul id="menu-footer" class="menu-footer"><li id="menu-item-1919" class="menu-item menu-item-type-post_type menu-item-object-page menu-normal"><a href="http://demos.cpothemes.com/allegiant/blog/"><span class="menu-link"><span class="menu-title">Blog</span></span></a></li>
+<li id="menu-item-1915" class="menu-item menu-item-type-post_type menu-item-object-page menu-normal"><a href="http://demos.cpothemes.com/allegiant/portfolio/"><span class="menu-link"><span class="menu-title">Portfolio</span></span></a></li>
+<li id="menu-item-1916" class="menu-item menu-item-type-post_type menu-item-object-page menu-normal"><a href="http://demos.cpothemes.com/allegiant/shortcodes/"><span class="menu-link"><span class="menu-title">Shortcodes</span></span></a></li>
+<li id="menu-item-1917" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor menu-normal"><a href="http://demos.cpothemes.com/allegiant/page-templates/"><span class="menu-link"><span class="menu-title">Page Templates</span></span></a></li>
+</ul></div></div><div class="footer-content"><span class="copyright">© Allegiant 2018. </span><span class="cpo-credit-link"> Theme designed by <a href="http://www.cpothemes.com/">CPOThemes</a>.</span></div>				</div>
+			</footer>
+						
+			<div class="clear"></div>
+		</div><!-- wrapper -->
+			</div><!-- outer -->
+
+		<div id="ctdw-bar" class="ctdw-bar">
+
+		</div>
+	<div id="menu-mobile-close" class="menu-mobile-close menu-mobile-toggle"></div><ul id="menu-mobile" class="menu-mobile"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1930"><a href="http://demos.cpothemes.com/allegiant/features/">Features</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1936"><a href="http://demos.cpothemes.com/allegiant/features/custom-shortcodes/">Custom Shortcodes</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1939"><a href="http://demos.cpothemes.com/allegiant/features/customizable-typography/">Customizable Typography</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1937"><a href="http://demos.cpothemes.com/allegiant/features/demo-content/">Included Demo Content</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1933"><a href="http://demos.cpothemes.com/allegiant/features/multi-language-integration/">Multi-Language Integration</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1940"><a href="http://demos.cpothemes.com/allegiant/features/powerful-theme-options/">Powerful Theme Options</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1935"><a href="http://demos.cpothemes.com/allegiant/features/premium-support/">Premium Support</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1938"><a href="http://demos.cpothemes.com/allegiant/features/responsive-design/">Responsive Design</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1934"><a href="http://demos.cpothemes.com/allegiant/features/unlimited-color-palette/">Unlimited Color Palette</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-menu-ancestor current-menu-parent current-page-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1920"><a href="http://demos.cpothemes.com/allegiant/page-templates/">Page Templates</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-1816 current_page_item menu-item-1932"><a href="http://demos.cpothemes.com/allegiant/page-templates/wide-page/">Wide Page</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2004"><a href="http://demos.cpothemes.com/allegiant/page-templates/left-sidebar/">Left Sidebar</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1987"><a href="http://demos.cpothemes.com/allegiant/page-templates/two-sidebars/">Double Sidebar</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1988"><a href="http://demos.cpothemes.com/allegiant/page-templates/minimal-page/">Minimal Page</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1931"><a href="http://demos.cpothemes.com/allegiant/page-templates/blank-page/">Blank Page</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2005"><a href="http://demos.cpothemes.com/allegiant/page-templates/page-with-comments/">Page With Comments</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1929"><a href="http://demos.cpothemes.com/allegiant/page-templates/submenu-pages/">Submenu Navigation</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1921"><a href="http://demos.cpothemes.com/allegiant/page-templates/sitemap/">Sitemap</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1928"><a href="http://demos.cpothemes.com/allegiant/shortcodes/">Shortcodes</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1927"><a href="http://demos.cpothemes.com/allegiant/portfolio/">Portfolio</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1926"><a href="http://demos.cpothemes.com/allegiant/blog/">Blog</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1993"><a href="http://demos.cpothemes.com/allegiant/contact/">Contact</a></li>
+</ul><link rel="stylesheet" id="cpotheme-font-source-sans-pro-css" href="/static/allegiant_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="cpotheme-fontawesome-css" href="/static/allegiant_files/icon-fontawesome.css" type="text/css" media="all">
+<link rel="stylesheet" id="ctsc-shortcodes-css" href="/static/allegiant_files/style(4).css" type="text/css" media="all">
+<script type="text/javascript">
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"http:\/\/demos.cpothemes.com\/allegiant\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"recaptcha":{"messages":{"empty":"Please verify that you are not a robot."}}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="/static/allegiant_files/scripts.js"></script>
+<script type="text/javascript" src="/static/allegiant_files/general.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var wc_add_to_cart_params = {"ajax_url":"\/allegiant\/wp-admin\/admin-ajax.php","wc_ajax_url":"http:\/\/demos.cpothemes.com\/allegiant\/?wc-ajax=%%endpoint%%","i18n_view_cart":"View cart","cart_url":"http:\/\/demos.cpothemes.com\/allegiant\/cart\/","is_cart":"","cart_redirect_after_add":"no"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="/static/allegiant_files/add-to-cart.min.js"></script>
+<script type="text/javascript" src="/static/allegiant_files/jquery.blockUI.min.js"></script>
+<script type="text/javascript" src="/static/allegiant_files/js.cookie.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var woocommerce_params = {"ajax_url":"\/allegiant\/wp-admin\/admin-ajax.php","wc_ajax_url":"http:\/\/demos.cpothemes.com\/allegiant\/?wc-ajax=%%endpoint%%"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="/static/allegiant_files/woocommerce.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var wc_cart_fragments_params = {"ajax_url":"\/allegiant\/wp-admin\/admin-ajax.php","wc_ajax_url":"http:\/\/demos.cpothemes.com\/allegiant\/?wc-ajax=%%endpoint%%","fragment_name":"wc_fragments_4103b7d6761418f0af8849cb145f3329"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="/static/allegiant_files/cart-fragments.min.js"></script>
+<script type="text/javascript" src="/static/allegiant_files/comment-reply.min.js"></script>
+<script type="text/javascript" src="/static/allegiant_files/core.js"></script>
+<script type="text/javascript" src="/static/allegiant_files/event-tracking.js"></script>
+<script type="text/javascript" src="/static/allegiant_files/wp-embed.min.js"></script>
+
+
+</body></html>

@@ -1,0 +1,36 @@
+﻿html { margin-top:40px !important; }
+/*.outer { margin-top:40px; }*/
+
+.ctdw-bar { position:fixed; font-family:'Open Sans'; top:0; left:0; width:100%; height:40px; background:#333; padding:0; z-index:999997; -moz-transition:0.6s all; -webkit-transition:0.6s all; transition:0.6s all; }
+.ctdw-bar a:link, .ctdw-bar a:visited { color:#fff; }
+.ctdw-bar .ctdw-logo { float:left; margin:8px 20px; line-height:1; }
+.ctdw-bar .ctdw-logo img { display:block; }
+.ctdw-bar .ctdw-link { display:block; float:right; line-height:40px; margin-right:20px; font-size:14px; font-weight:bold; }
+.ctdw-bar .ctdw-subscribe { display:block; float:right; background:#6b2; line-height:40px; margin:0; padding:0 20px; text-transform:uppercase; font-weight:bold; font-size:14px; }
+.ctdw-bar .ctdw-subscribe:hover { background:#7c3; text-decoration:none; }
+
+.ctdw-themes { float:left; margin:0; position:relative; width:280px; }
+.ctdw-themes .ctdw-dropdown { position:relative; color:#fff; background:#444; font-size:12px; padding:0 15px; line-height:40px; cursor:pointer; }
+.ctdw-themes .ctdw-dropdown:hover { background:#555; }
+.ctdw-themes .ctdw-dropdown:before { position:absolute; font-family:'fontawesome'; content:'\f107'; top:50%; right:10px; height:20px; width:20px; line-height:20px; text-align:center; margin-top:-10px; color:#bbb; }
+
+.ctdw-themes .ctdw-list { visibility:hidden; opacity:0; width:350px; background:#777; display:block; height:0; overflow:auto; margin-top:0px; padding:0; -moz-transition:0.3s all; -webkit-transition:0.3s all; transition:0.3s all; box-shadow:0 2px 4px 0px rgba(0,0,0,0.3); }
+.ctdw-themes .ctdw-list-open { visibility:visible; opacity:1; height:350px; }
+.ctdw-themes .ctdw-list .ctdw-list-item,
+.ctdw-themes .ctdw-list .ctdw-list-item:visited { display:block; clear:both; margin:0; padding:10px; color:#666; border-bottom:1px solid #999; overflow:hidden; -moz-transition:0.6s all; -webkit-transition:0.6s all; transition:0.6s all; }
+.ctdw-themes .ctdw-list .ctdw-list-item:hover { background:rgba(255,255,255,0.2); text-decoration:none; }
+.ctdw-list-item .ctdw-item-image { display:block; float:left; width:100px; height:auto; margin-right:10px; box-shadow:0 1px 4px 0px rgba(255,255,255,0.6); }
+.ctdw-list-item .ctdw-item-title { display:block; margin:5px 0; font-size:18px; line-height:1.2; color:#fff; }
+.ctdw-list-item .ctdw-item-category { font-size:14px; color:#ccc; }
+
+
+/* TABLET */
+@media only screen and (max-width: 800px){
+	.ctdw-bar .ctdw-logo { display:none; }
+}
+
+/* SMARTPHONE */
+@media only screen and (max-width: 600px){
+	html { margin-top:0 !important; }
+	.ctdw-bar { display:none;}
+}

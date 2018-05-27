@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+        <title>Forms sample - Viewflow Demo</title>
+        
+
+<link href="/static/material/fonts/material-icons.61bc1caf7f45.css"  rel="stylesheet">
+<link href="/static/material/fonts/roboto/style.a45a43257e47.css" rel="stylesheet">
+
+<link href="/static/material/css/materialize.frontend.min.94d9c6207796.css" rel="stylesheet">
+
+<script src="/static/material/js/materialize.frontend.min.3e25aeca5917.js"></script>
+
+<script type="text/javascript">
+  $(document).on('turbolinks:load', function () {
+    $('.dropdown-button').dropdown()
+  })
+</script>
+
+<script type="text/javascript">
+  $(document).on('turbolinks:load', function() {
+    $('pre code').each(function(i, block) {
+      hljs.highlightBlock(block);
+    });
+    $('.modal').modal();
+  })
+</script>
+
+
+{% load static %} 
+<script src="{% static 'material/js/jquery.js' %}"></script>
+{% include 'material/includes/material_css.html' %}
+{% include 'material/includes/material_js.html' %}
+
+    </head>
+    <body class="with-sidebar">
+        
+        <header>
+            
+            <ul id="slide-out" class="sidenav sidenav-fixed" data-turbolinks-permanent>
+                
+                <li>
+                    <div class="user-view">
+                        <div class="background" >
+                          <img src="/static/material/imgs/sidenav.1a209c00190b.svg">
+                        </div>
+
+                        
+                        <a href="#"><span class="white-text name">Admin</span></a>
+                        <a href="#"><span class="white-text email"></span></a>
+                    </div>
+                </li>
+                
+                
+                
+                
+                <li >
+                    <a href="/" class="collapsible-header" data-turbolinks="false">Test<i class="material-icons">account_balance</i></a>
+                </li>
+                
+                
+                
+                <li >
+                    <a href="/employees/" class="collapsible-header" data-turbolinks="false">Test<i class="material-icons">people</i></a>
+                </li>
+                
+                
+                
+                <li >
+                    <a href="/integration/" class="collapsible-header" data-turbolinks="false">Test<i class="material-icons">extension</i></a>
+                </li>                                
+                
+                <li >
+                    <a href="/workflow/" class="collapsible-header" data-turbolinks="false">Test<i class="material-icons">assignment</i></a>
+                </li>
+                
+                
+                
+                <li class="last">
+                    <a href="/workflow/api/" class="collapsible-header" data-turbolinks="false">Test<i class="material-icons">settings_input_component</i></a>
+                </li>
+                
+                
+                
+            </ul>
+                        
+        </header>
+        <main>
+            
+
+            
+            <nav class="topbar">
+                <div class="nav-wrapper">
+                    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <div class="brand-logo">
+                        <a href="/materialforms/">Statistics</a>
+                    </div>
+
+                </div>
+            </nav>
+            
+            
+            <nav class="breadcrumbs">
+                <div class="nav-wrapper">
+                    
+                </div>
+            </nav>
+            
+            
+            <div class="content">
+                
+<div class="left-panel">
+
+        <div style="background-color: padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px;">
+    
+    <div class="card" style="padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px;">
+        {% block content %}{% endblock %}
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<div class="right-panel">
+    <ul class="collection with-header">
+        <li class="collection-header"><h5>Source code</h5></li>            
+            <li class="collection-item">                
+                <a href="#python" ><i class="left material-icons">code</i>Python</a>
+            </li>
+            <li class="collection-item">                
+                <a href="#html" ><i class="left material-icons">web</i>HTML</a>
+            </li>                        
+            <li class="collection-item">&nbsp;</li>
+        </ul>
+</div>
+
+            </div>
+
+<script type="text/javascript">
+
+
+  if($(window).width() >= 900) {
+    // no tour on small screen
+    tour.start();
+  }
+
+</script>
+
+        </main>
+        <footer>
+            
+        </footer>
+        
+        
+        
+        
+    </body>
+</html>

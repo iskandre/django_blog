@@ -1,0 +1,63 @@
+
+{% extends "blog_single_generic.htm" %}
+
+{% block content %}
+
+<!--About Tab-->
+<section id="about" class="bgWhite ofsInBottom active" style="display: block;">
+                    						
+<!--About -->
+<div class="about">
+
+
+							<!--Main title-->
+							
+								<div class="main-title">
+									<h1>The conception of robot</h1>
+									<div class="divider">
+											<div class="zigzag large clearfix " data-svg-drawing="yes">
+<svg xml:space="preserve" viewBox="0 0 69.172 14.975" width="37" height="28" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1">
+<path d="M1.357,12.26 10.807,2.81 20.328,12.332
+	29.781,2.879 39.223,12.321 48.754,2.79 58.286,12.321 67.815,2.793 " style="stroke-dasharray: 93.9851, 93.9851; stroke-dashoffset: 0;"></path>
+</svg>
+</div>
+									</div>
+								</div>	
+								
+							<!--End main title-->
+						
+						
+							
+						
+						<!--Content-->	
+						<div class="content">
+                        <div class = "intro_post_div">
+                        <div>
+<p>
+The script of robot was written in Python using mobile device simulator imitation and Instagram endpoints.</br></br>
+<h5>The robot works on the following scheme:</h5>
+<ul>
+<li>A set of root bloggers is defined. These bloggers are the people whose audience the robot is going to scan.</li>
+<li>For every blogger the robot scans all users who liked blogger's last three posts</li>
+<li>Then the audience is filtered based on the curving graph follows/followed_by. The idea is to find the most optimal coefficient of parameters that user is more likely to notice like/follow from the robot and react.</li>
+<li>When the final audience to follow is defined: the robot follows everyone for 48 hours.</li>
+<li>For the testing reason some users are given random likes on some of the latest posts</li>
+<li>If a user has a story, then the robot watches all the stories</li>
+<li>All actions are recorded into logs. This will help to build statistics later on how many users reacted back and which users' profile factors affect positively on following back rate.</li>
+</ul>
+</p>  
+<br>
+<p>There is also a python script which collects information about users' reaction</p>
+Every several hours the bot scan the list of followers and comparing with the previous list thus it detects new users who have started following and users who have unsubscribed. Also it scans all the likers to have data about liking
+activities.
+</p>
+</div>
+</div>
+
+
+
+</div>
+</div>
+</div>    
+
+{% endblock %}

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+    
+            <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+        <title>Forms sample - Viewflow Demo</title>
+        
+
+<link href="/static/material/fonts/material-icons.61bc1caf7f45.css"  rel="stylesheet">
+<link href="/static/material/fonts/roboto/style.a45a43257e47.css" rel="stylesheet">
+
+<link href="/static/material/css/materialize.frontend.min.94d9c6207796.css" rel="stylesheet">
+
+<script src="/static/material/js/materialize.frontend.min.3e25aeca5917.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+
+<script type="text/javascript">
+  $(document).on('turbolinks:load', function () {
+    $('.dropdown-button').dropdown()
+  })
+</script>
+
+<script type="text/javascript">
+  $(document).on('turbolinks:load', function() {
+    $('pre code').each(function(i, block) {
+      hljs.highlightBlock(block);
+    });
+    $('.modal').modal();
+  })
+</script>
+
+
+{% load static %} 
+<script src="{% static 'material/js/jquery.js' %}"></script>
+{% include 'material/includes/material_css.html' %}
+{% include 'material/includes/material_js.html' %}
+
+    <link rel="stylesheet" type="text/css" href="https://datatables.net/media/css/site-examples.css?_=6e5593ad4c5375eef5d919cfc10a0a54">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+    <style type="text/css" class="init">
+    
+    tfoot input {
+	width: 100%;
+	padding: 3px;
+	box-sizing: border-box;
+    }
+    </style>
+    
+    <style>
+
+    circle {
+      fill: rgb(31, 119, 180);
+      fill-opacity: 0.5;
+      stroke: rgb(31, 119, 180);
+      stroke-width: 1px;
+    }
+    
+    .leaf circle {
+      fill: #ff7f0e;
+      fill-opacity: 1;
+    }
+    
+    </style>
+
+    <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-1.12.4.js">
+    </script>
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js">
+    </script>
+    <script type="text/javascript" language="javascript" src="https://datatables.net/examples/resources/demo.js">
+    </script>
+    <script type="text/javascript" class="init">
+    
+
+$(document).ready(function() {
+    // Setup - add a text input to each footer cell
+    $('#example tfoot th').each( function () {
+	var title = $(this).text();
+	$(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    } );
+
+    // DataTable
+    var table = $('#example').DataTable();
+
+    // Apply the search
+    table.columns().every( function () {
+	var that = this;
+
+	$( 'input', this.footer() ).on( 'keyup change', function () {
+	    if ( that.search() !== this.value ) {
+		that
+		    .search( this.value )
+		    .draw();
+	    }
+	} );
+    } );
+} );
+
+
+    </script>
+
+
+    </head>
+    
+    <body class="with-sidebar">
+    
+    
+            <header>
+            
+            <ul id="slide-out" class="sidenav sidenav-fixed" data-turbolinks-permanent>
+                
+                <li>
+                    <div class="user-view">
+                        <div class="background" >
+                          <img src="/static/material/imgs/sidenav.1a209c00190b.svg">
+                        </div>
+
+                        
+                        <a href="#"><span class="white-text name">Admin</span></a>
+                        <a href="#"><span class="white-text email"></span></a>
+                    </div>
+                </li>
+                
+                
+                
+                
+                <li >
+                    <a href="/" class="collapsible-header" data-turbolinks="false">Test<i class="material-icons">account_balance</i></a>
+                </li>
+                
+                
+                
+                <li >
+                    <a href="/employees/" class="collapsible-header" data-turbolinks="false">Test<i class="material-icons">people</i></a>
+                </li>
+                
+                
+                
+                <li >
+                    <a href="/integration/" class="collapsible-header" data-turbolinks="false">Test<i class="material-icons">extension</i></a>
+                </li>                                
+                
+                <li >
+                    <a href="/workflow/" class="collapsible-header" data-turbolinks="false">Test<i class="material-icons">assignment</i></a>
+                </li>
+                
+                
+                
+                <li class="last">
+                    <a href="/workflow/api/" class="collapsible-header" data-turbolinks="false">Test<i class="material-icons">settings_input_component</i></a>
+                </li>
+                
+                
+                
+            </ul>
+                        
+        </header>
+        <main>
+            
+
+            
+            <nav class="topbar">
+                <div class="nav-wrapper">
+                    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <div class="brand-logo">
+                        <a href="/materialforms/">Statistics</a>
+                    </div>
+
+                </div>
+            </nav>
+            
+            
+            <nav class="breadcrumbs">
+                <div class="nav-wrapper">
+                    
+                </div>
+            </nav>
+            
+            
+            <div class="content">
+                
+<div class="left-panel">
+
+        <div style="background-color: padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px;">
+    
+    <div class="card" style="padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px;">
+<h2>Hashtags Clustering</h2>
+<span>*The data about user the bot follows have been collected and all the hashtags information has been proccessed through
+the clustering algorith. Thus the audience were separated into 7 major groups. Every group has its own major hashtags, 
+what is reflected in the graph below. The same colour means the same cluster. The bigger the circle is the bigger the cluster is.
+</span>
+<script>
+var json = {
+ "name": "data",
+ "children": [
+  {
+     "name": "topics",
+     "children": [
+             {% autoescape off %}
+                {{ stringJson }}
+            {% endautoescape %}
+]
+    }
+   ]
+};
+
+var r = 700,
+    format = d3.format(",d"),
+    fill = d3.scale.category20c();
+
+var bubble = d3.layout.pack()
+    .sort(null)
+    .size([r, r])
+    .padding(1.5);
+
+var vis = d3.select(".card").append("svg")
+    .attr("width", r)
+    .attr("height", r)
+    .attr("class", "bubble");
+
+
+var node = vis.selectAll("g.node")
+    .data(bubble.nodes(classes(json))
+    .filter(function(d) { return !d.children; }))
+    .enter().append("g")
+    .attr("class", "node")
+    .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
+    color = d3.scale.category20();
+  
+  node.append("title")
+      .text(function(d) { return d.className + ": " + format(d.value); });
+  
+  node.append("circle")
+      .attr("r", function(d) { return d.r; })
+      .style("fill", function(d) {return color(d.topicName);});
+
+var text = node.append("text")
+    .attr("text-anchor", "middle")
+    .attr("dy", ".2em")
+    .text(function(d) { return d.className.substring(0, d.r / 3)});
+  
+  text.append("tspan")
+      .attr("dy", "1.0em")
+      .attr("x", 0)
+      .text(function(d) {return Math.ceil(d.value * 10000) /10000; });
+
+// Returns a flattened hierarchy containing all leaf nodes under the root.
+function classes(root) {
+  var classes = [];
+  
+  function recurse(term, node) {
+    if (node.children) node.children.forEach(function(child) { recurse(node.term, child); });
+    else classes.push({topicName: node.topicId, className: node.term, value: node.probability});
+  }
+  
+  recurse(null, root);
+  return {children: classes};
+}
+</script>
+
+</br></br>
+<h2>Hashtags Clusters Performance</h2>
+
+<table id="example" class="display dataTable" cellspacing="0" width="100%" role = "grid" aria-describedby = "example_info">
+        <thead>
+            <tr>
+                <th>Cluster</th>
+                <th>Top 5 words</th>
+                <th>Followers</th>
+                <th>Non followers</th>
+                <th>Following CTR, %</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>Cluster</th>
+                <th>Top 5 words</th>
+                <th>Followers</th>
+                <th>Non followers</th>
+                <th>Following CTR, %</th>
+            </tr>
+        </tfoot>
+        <tbody>
+        {% for key,value in resDf.items %}
+            <tr>
+                <td>{{key}}</td>
+                <td>{{ value|get_item:"top_words" }}</td>
+                <td>{{ value|get_item:"followers" }}</td>
+                <td>{{ value|get_item:"nonFollowers" }}</td>
+                <td>{{ value|get_item:"followingCTR" }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+<span>
+<b><h2>Most popular hashtags in best/worst clusters</h2></b>
+</span></br>
+<span>
+<b>Best converting cluster</b>
+</span>
+<table id="example" class="display dataTable" cellspacing="0" width="100%" role = "grid" aria-describedby = "example_info">
+        <tbody>
+        {% for item in best_hashtags %}
+            <tr>
+                <td>{{item}}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </br></br>
+
+<span>
+<b>Worst converting cluster</b>
+</span>
+<table id="example" class="display dataTable" cellspacing="0" width="100%" role = "grid" aria-describedby = "example_info">
+        <tbody>
+        {% for item in worst_hashtags %}
+            <tr>
+                <td>{{item}}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        </div>
+    </div>
+
+</body>

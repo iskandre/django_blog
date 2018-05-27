@@ -1,0 +1,41 @@
+var b_txt = '';
+
+// Write a warning for the developer
+b_txt+= '<!-- DEVELOPER WARNING: The Flickr badge code is likely to be deprecated, and we recommend changing to a new method to embed photo as soon as possible.  See https://www.flickr.com/api for information on how to access Flickr data. Thanks. -->';
+
+// write the badge
+	
+	
+		 	 		
+	b_txt+= '<div class="flickr_badge_image" id="flickr_badge_image1"><a href="http://www.flickr.com/photos/thefella/37988098906/"><img src="http://farm5.staticflickr.com/4455/37988098906_3369cf3a1c_s.jpg" alt="Une photo sur Flickr" title="Chasm" height="75" width="75"></a></div>';
+	
+		 	 		
+	b_txt+= '<div class="flickr_badge_image" id="flickr_badge_image2"><a href="http://www.flickr.com/photos/thefella/35978054525/"><img src="http://farm5.staticflickr.com/4308/35978054525_6c433c12de_s.jpg" alt="Une photo sur Flickr" title="Blue Mosque" height="75" width="75"></a></div>';
+	
+		 	 		
+	b_txt+= '<div class="flickr_badge_image" id="flickr_badge_image3"><a href="http://www.flickr.com/photos/thefella/33906547140/"><img src="http://farm3.staticflickr.com/2838/33906547140_41c74c619d_s.jpg" alt="Une photo sur Flickr" title="Frozen Forest" height="75" width="75"></a></div>';
+	
+		 	 		
+	b_txt+= '<div class="flickr_badge_image" id="flickr_badge_image4"><a href="http://www.flickr.com/photos/thefella/32749210945/"><img src="http://farm1.staticflickr.com/412/32749210945_0e0bf53bd2_s.jpg" alt="Une photo sur Flickr" title="House of a Thousand Colours" height="75" width="75"></a></div>';
+	
+		 	 		
+	b_txt+= '<div class="flickr_badge_image" id="flickr_badge_image5"><a href="http://www.flickr.com/photos/thefella/32612596966/"><img src="http://farm1.staticflickr.com/287/32612596966_8202896858_s.jpg" alt="Une photo sur Flickr" title="Solitary Saksun" height="75" width="75"></a></div>';
+	
+		 	 		
+	b_txt+= '<div class="flickr_badge_image" id="flickr_badge_image6"><a href="http://www.flickr.com/photos/thefella/29406972965/"><img src="http://farm9.staticflickr.com/8540/29406972965_31ba8c133b_s.jpg" alt="Une photo sur Flickr" title="Glenoe" height="75" width="75"></a></div>';
+	
+		 	 		
+	b_txt+= '<div class="flickr_badge_image" id="flickr_badge_image7"><a href="http://www.flickr.com/photos/thefella/28435171090/"><img src="http://farm9.staticflickr.com/8395/28435171090_bb9274d2f8_s.jpg" alt="Une photo sur Flickr" title="Bones In The Sand" height="75" width="75"></a></div>';
+	
+		 	 		
+	b_txt+= '<div class="flickr_badge_image" id="flickr_badge_image8"><a href="http://www.flickr.com/photos/thefella/26475428601/"><img src="http://farm2.staticflickr.com/1508/26475428601_c22cbe1e98_s.jpg" alt="Une photo sur Flickr" title="Secret Hell" height="75" width="75"></a></div>';
+	
+		 	 		
+	b_txt+= '<div class="flickr_badge_image" id="flickr_badge_image9"><a href="http://www.flickr.com/photos/thefella/24954552881/"><img src="http://farm2.staticflickr.com/1670/24954552881_413ff1365f_s.jpg" alt="Une photo sur Flickr" title="Gásadalur" height="75" width="75"></a></div>';
+	
+		 	 		
+	b_txt+= '<div class="flickr_badge_image" id="flickr_badge_image10"><a href="http://www.flickr.com/photos/thefella/23586899772/"><img src="http://farm1.staticflickr.com/777/23586899772_bfdafa8d06_s.jpg" alt="Une photo sur Flickr" title="Fushimi Inari" height="75" width="75"></a></div>';
+
+b_txt += '<span style="position:absolute;left:-999em;top:-999em;visibility:hidden" class="flickr_badge_beacon"><img src="http://geo.yahoo.com/p?s=792600102&t=4af092dd03c8968a41843fab15c78993&r=http%3A%2F%2Fdemos.cpothemes.com%2Fallegiant%2Fpage-templates%2Fwide-page%2F&fl_ev=0&lang=fr&intl=de" width="0" height="0" alt="" /></span>';
+
+document.write(b_txt);
