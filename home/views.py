@@ -53,16 +53,16 @@ def post(request):
 
 #    temp_dict = resDict_natalie['root_users_dict']
 #    resDict_iskandre_natalie['root_users_dict'] = take(10, temp_dict.items())
-    resDict_iskandre['correlation_heatmap_graph'] = dir_path + '/cached_data/' + 'iskandre' + '/' + resDict_iskandre['correlation_heatmap_graph'].split('/')[len(resDict_iskandre['correlation_heatmap_graph'].split('/')) - 1]
+    resDict_iskandre['correlation_heatmap_graph'] = dir_path + '/media/' + 'iskandre' + '/' + resDict_iskandre['correlation_heatmap_graph'].split('/')[len(resDict_iskandre['correlation_heatmap_graph'].split('/')) - 1]
     print('correlation_heatmap_graph updated %s' %resDict_iskandre['correlation_heatmap_graph'])
-    resDict_iskandre['pairplot_homeCountry_graph'] = dir_path + '/cached_data/' + 'iskandre' + '/' + resDict_iskandre['pairplot_homeCountry_graph'].split('/')[len(resDict_iskandre['pairplot_homeCountry_graph'].split('/')) - 1]
-    resDict_iskandre['pairplot_main_graph'] = dir_path + '/cached_data/' + 'iskandre' + '/' + resDict_iskandre['pairplot_main_graph'].split('/')[len(resDict_iskandre['pairplot_main_graph'].split('/')) - 1]
-    resDict_iskandre['pairplot_followed_by'] = dir_path + '/cached_data/' + 'iskandre' + '/' + resDict_iskandre['pairplot_followed_by'].split('/')[len(resDict_iskandre['pairplot_followed_by'].split('/')) - 1]
-    resDict_iskandre['pairplot_follows'] = dir_path + '/cached_data/' + 'iskandre' + '/' + resDict_iskandre['pairplot_follows'].split('/')[len(resDict_iskandre['pairplot_follows'].split('/')) - 1]
-    resDict_iskandre['pairplot_posts_count'] = dir_path + '/cached_data/' + 'iskandre' + '/' + resDict_iskandre['pairplot_posts_count'].split('/')[len(resDict_iskandre['pairplot_posts_count'].split('/')) - 1]
-    resDict_iskandre['pairplot_countriesCount'] = dir_path + '/cached_data/' + 'iskandre' + '/' + resDict_iskandre['pairplot_countriesCount'].split('/')[len(resDict_iskandre['pairplot_countriesCount'].split('/')) - 1]
-    resDict_iskandre['pairplot_avgPostingFreq'] = dir_path + '/cached_data/' + 'iskandre' + '/' + resDict_iskandre['pairplot_avgPostingFreq'].split('/')[len(resDict_iskandre['pairplot_avgPostingFreq'].split('/')) - 1]
-    resDict_iskandre['pairplot_withGeo'] = dir_path + '/cached_data/' + 'iskandre' + '/' + resDict_iskandre['pairplot_withGeo'].split('/')[len(resDict_iskandre['pairplot_withGeo'].split('/')) - 1]
+    resDict_iskandre['pairplot_homeCountry_graph'] = dir_path + '/media/' + 'iskandre' + '/' + resDict_iskandre['pairplot_homeCountry_graph'].split('/')[len(resDict_iskandre['pairplot_homeCountry_graph'].split('/')) - 1]
+    resDict_iskandre['pairplot_main_graph'] = dir_path + '/media/' + 'iskandre' + '/' + resDict_iskandre['pairplot_main_graph'].split('/')[len(resDict_iskandre['pairplot_main_graph'].split('/')) - 1]
+    resDict_iskandre['pairplot_followed_by'] = dir_path + '/media/' + 'iskandre' + '/' + resDict_iskandre['pairplot_followed_by'].split('/')[len(resDict_iskandre['pairplot_followed_by'].split('/')) - 1]
+    resDict_iskandre['pairplot_follows'] = dir_path + '/media/' + 'iskandre' + '/' + resDict_iskandre['pairplot_follows'].split('/')[len(resDict_iskandre['pairplot_follows'].split('/')) - 1]
+    resDict_iskandre['pairplot_posts_count'] = dir_path + '/media/' + 'iskandre' + '/' + resDict_iskandre['pairplot_posts_count'].split('/')[len(resDict_iskandre['pairplot_posts_count'].split('/')) - 1]
+    resDict_iskandre['pairplot_countriesCount'] = dir_path + '/media/' + 'iskandre' + '/' + resDict_iskandre['pairplot_countriesCount'].split('/')[len(resDict_iskandre['pairplot_countriesCount'].split('/')) - 1]
+    resDict_iskandre['pairplot_avgPostingFreq'] = dir_path + '/media/' + 'iskandre' + '/' + resDict_iskandre['pairplot_avgPostingFreq'].split('/')[len(resDict_iskandre['pairplot_avgPostingFreq'].split('/')) - 1]
+    resDict_iskandre['pairplot_withGeo'] = dir_path + '/media/' + 'iskandre' + '/' + resDict_iskandre['pairplot_withGeo'].split('/')[len(resDict_iskandre['pairplot_withGeo'].split('/')) - 1]
                 
     return render(request,'home/analysis_post.htm',{'followerCTR_map':resDict_iskandre['followerCTR_map'],'sum_followers_map':resDict_iskandre['sum_followers_map'],
                                                  'results_table':temp_dict,'clusters_string':resDict_natalie['stringJson'],
@@ -73,14 +73,14 @@ def post(request):
                                     'pairplot_followed_by':resDict_iskandre['pairplot_followed_by'],
                                     'pairplot_follows':resDict_iskandre['pairplot_follows'],'pairplot_posts_count':resDict_iskandre['pairplot_posts_count'],
                                     'pairplot_countriesCount':resDict_iskandre['pairplot_countriesCount'],'pairplot_avgPostingFreq':resDict_iskandre['pairplot_avgPostingFreq'],
-                                    'df_userMapScreen':dir_path + '/cached_data/iskandre/dfUserMap_example.png',
-                                    'bugsModelScreen':dir_path + '/cached_data/iskandre/bugs_model_screenshot.png',
+                                    'df_userMapScreen':dir_path + '/media/iskandre/dfUserMap_example.png',
+                                    'bugsModelScreen':dir_path + '/media/iskandre/bugs_model_screenshot.png',
                                     'pairplot_withGeo':resDict_iskandre['pairplot_withGeo'],
-                                    'b1':'/cached_data/iskandre/b1.png','b2':dir_path + '/cached_data/iskandre/b2.png',
-                                    'b3':'/cached_data/iskandre/b3.png','b4':dir_path + '/cached_data/iskandre/b4.png',
-                                    'b5':'/cached_data/iskandre/b5.png','b6':dir_path + '/cached_data/iskandre/b6.png',
-                                    'b7':'/cached_data/iskandre/b7.png','b8':dir_path + '/cached_data/iskandre/b8.png',
-                                    'b9':'/cached_data/iskandre/b9.png','b10':dir_path + '/cached_data/iskandre/b10.png'
+                                    'b1':'/media/iskandre/b1.png','b2':dir_path + '/media/iskandre/b2.png',
+                                    'b3':'/media/iskandre/b3.png','b4':dir_path + '/media/iskandre/b4.png',
+                                    'b5':'/media/iskandre/b5.png','b6':dir_path + '/media/iskandre/b6.png',
+                                    'b7':'/media/iskandre/b7.png','b8':dir_path + '/media/iskandre/b8.png',
+                                    'b9':'/media/iskandre/b9.png','b10':dir_path + '/media/iskandre/b10.png'
                                                  })
 
 
