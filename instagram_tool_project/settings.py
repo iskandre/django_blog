@@ -23,13 +23,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = 'z_mw0-!%5!)hnw0)m=4gjrau7(cwj%2hd!xosq8!)*x0f*znr@'
 import os
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY','z_mw0-!%5!)hnw0)m=4gjrau7(cwj%2hd!xosq8!)*x0f*znr@')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
 DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 
-ALLOWED_HOSTS = ['83.166.242.58','127.0.0.1', 'iskandre.com']
+ALLOWED_HOSTS = ['83.166.242.58','127.0.0.1', 'iskandre.com','www.iskandre.com']
 
 
 # Application definition
@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'viewflow.frontend',
     'viewflow',
     'tool.apps.ToolConfig',
-    'home.apps.HomeConfig'
+    'home.apps.HomeConfig',
+    'mod_wsgi.server'
 ]
 
 MIDDLEWARE = [

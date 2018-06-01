@@ -35,7 +35,7 @@
                         <div>
 <p>
 The script of robot was written in Python using mobile device simulator imitation and Instagram endpoints.</br></br>
-<h5>The robot works on the following scheme:</h5>
+The robot has the workflow like below:
 <ul>
 <li>A set of root bloggers is defined. These bloggers are the people whose audience the robot is going to scan.</li>
 <li>For every blogger the robot scans all users who liked blogger's last three posts</li>
@@ -45,8 +45,15 @@ The script of robot was written in Python using mobile device simulator imitatio
 <li>If a user has a story, then the robot watches all the stories</li>
 <li>All actions are recorded into logs. This will help to build statistics later on how many users reacted back and which users' profile factors affect positively on following back rate.</li>
 </ul>
-</p>  
-<br>
+</p></br></br>  
+<h3>Below the diagram which represents the general idea </h3>
+<img src="{{loop}}" />
+</br>
+<h4>This diagram briefly displayes the structure of the code featuring the Poisson distribution to allocate the action time</h4>
+<img src="{{loop1}}">
+</br>
+</br>
+<h3>Data collection</h3>
 <p>There is also a python script which collects information about users' reaction</p>
 Every several hours the bot scan the list of followers and comparing with the previous list thus it detects new users who have started following and users who have unsubscribed. Also it scans all the likers to have data about liking
 activities.

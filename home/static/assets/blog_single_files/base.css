@@ -466,7 +466,7 @@ iframe{width:100%;frameborder:0;display:inline-block;}
 	.ofsInMTop{padding-top:50px !important;}
 	.ofsInMBottom{padding-bottom:50px !important;}
 	.ofsInTop{padding-top:60px !important;}
-	.ofsInBottom{padding-bottom:60px !important;}
+	.ofsInBottom{padding-bottom:0px !important;}
 	.ofsTMedium{padding-top:40px !important;} 
 	.ofsBMedium{padding-bottom:40px !important;}
 	.ofsTMinus{padding-top:10px !important;} 

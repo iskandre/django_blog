@@ -8,9 +8,12 @@ https://docs.djangoproject.com/en/2.0/howto/deployment/wsgi/
 """
 
 import os
+import sys
 
 from django.core.wsgi import get_wsgi_application
 
+sys.path.append('/srv/envs/iskandre_env/lib/python3.5/site-packages')
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "instagram_tool_project.settings")
+
 
 application = get_wsgi_application()
