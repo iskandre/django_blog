@@ -6,7 +6,7 @@ configparser==3.5.0
 cycler==0.10.0
 daemon==1.1
 decorator==4.2.1
-Django==2.0.2
+Django==2.2.10
 django-filter==1.1.0
 django-material==1.2.2
 -e git://github.com/theatlantic/django-mysqlndb-backend.git@15403abcf18f264a1945b4f2fb684d15e0fdc82c#egg=django_mysqlndb_backend
